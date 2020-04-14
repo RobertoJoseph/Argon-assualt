@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
          xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
          yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
-        float xOffset = xThrow * Speed * Time.deltaTime;
+        float xOffset = xThrow * Speed * Time.deltaTime; //How much the object moves in this frame , as msln l value of xThrow = -1*5m/s*1s = -1*5=5m hyt7rk 5 GAMD 
         float yOffset = yThrow * Speed * Time.deltaTime;
 
         float rawNewXPos = transform.localPosition.x + xOffset;
