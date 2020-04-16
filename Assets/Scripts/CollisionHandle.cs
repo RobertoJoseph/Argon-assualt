@@ -16,14 +16,14 @@ public class CollisionHandle : MonoBehaviour
     {
      
         StartDeathSequence();
-        deathFX.SetActive(true);
+        deathFX.SetActive(true); //GameObject On
     }
     private void StartDeathSequence()
     {
 
-        print("Player Dying");
-        SendMessage("OnPlayerDeath");
-        Invoke("ReloadLevel", LoadLevelDelay);
+       
+        SendMessage("OnPlayerDeath"); //Calling Functions from another SCRIPT
+        Invoke("ReloadLevel", LoadLevelDelay); 
         
     }
     void ReloadLevel()
