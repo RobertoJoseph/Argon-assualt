@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 559871204}
   - component: {fileID: 559871205}
   - component: {fileID: 173012899}
+  - component: {fileID: 173012900}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Untagged
@@ -123,13 +124,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a2f7b29682812458e94a033d1426a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 112.93
+  controlSpeed: 90
   xRange: 80
   yRange: 48.1
   PositionPitchFactor: -0.242
   PositionYawFactor: 0.62
   ControlPitchFactor: -20.9
   ControlRollFactor: -32.2
+--- !u!114 &173012900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013772491214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb499bfcbc487994e9073c45a618bbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadLevelDelay: 1
+  deathFX: {fileID: 0}
 --- !u!1001 &118421970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,7 +210,27 @@ PrefabInstance:
     - target: {fileID: 1454634011393081297, guid: 51c9866f7af5db246a0ae229d14bd6d4,
         type: 3}
       propertyPath: m_Name
-      value: Bullets (1)
+      value: Bullets Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c9866f7af5db246a0ae229d14bd6d4, type: 3}
@@ -270,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 1454634011393081297, guid: 51c9866f7af5db246a0ae229d14bd6d4,
         type: 3}
       propertyPath: m_Name
-      value: Bullets
+      value: Bullets Right
       objectReference: {fileID: 0}
     - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
         type: 3}
@@ -286,6 +321,26 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454634011393081298, guid: 51c9866f7af5db246a0ae229d14bd6d4,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c9866f7af5db246a0ae229d14bd6d4, type: 3}
