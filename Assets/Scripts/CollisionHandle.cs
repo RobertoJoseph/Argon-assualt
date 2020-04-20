@@ -12,7 +12,7 @@ public class CollisionHandle : MonoBehaviour
    
     // Start is called before the first frame update
    
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //elObject hyd5ol gwah  l haga
     {
      
         StartDeathSequence();

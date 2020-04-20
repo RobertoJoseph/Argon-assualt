@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("In m*s^-1")] [SerializeField] float controlSpeed = 90;
     [Tooltip(" In m")] [SerializeField] float xRange = 140f;
     [Tooltip(" In m")] [SerializeField] float yRange = 70f;
+    [SerializeField] GameObject[] guns;
 
     [Header("Screen-Position Based")]
 
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         
         ProcessMovement();
         ProcessRotation();
+        ProcessFiring();
     }
 
 }
@@ -87,5 +89,33 @@ public class PlayerMovement : MonoBehaviour
         float roll = rollDueToControl;
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll); // (Pitch , Yaw , Roll)
     }
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+          
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+
+    }
+    void ActivateGuns()
+    {
+        foreach(GameObject gun in guns) //el gun el awl feha Bullet 1 , f tro7 3mlha activate w b3d kda l gun tany feha bullet 2 , tro7 3mlhla activate tany
+        {
+            gun.SetActive(true); //GameObject on 
+        }
+    }
+    void DeactivateGuns()
+    {
+        foreach(GameObject gun in guns)
+        {
+            gun.SetActive(false);
+        }
+    }
+
 
 }
