@@ -30,6 +30,8 @@ public class EnemiesScript : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
+       
+
         if (hits <= 0)
         {
             KillEnemy();
