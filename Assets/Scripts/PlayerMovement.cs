@@ -93,29 +93,25 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
-          
-            ActivateGuns();
+
+            SetGunsActive(true);
         }
         else
         {
-            DeactivateGuns();
+            SetGunsActive(false);
         }
 
     }
-    void ActivateGuns()
+    void SetGunsActive(bool isActive)
     {
         foreach(GameObject gun in guns) //el gun el awl feha Bullet 1 , f tro7 3mlha activate w b3d kda l gun tany feha bullet 2 , tro7 3mlhla activate tany
         {
-            gun.SetActive(true); //GameObject on 
+            var emissionSystem = gun.GetComponent<ParticleSystem>().emission; //Bt acess el emission setting ele mawgoda f particle 
+            emissionSystem.enabled = isActive;
         }
     }
-    void DeactivateGuns()
-    {
-        foreach(GameObject gun in guns)
-        {
-            gun.SetActive(false);
-        }
-    }
+   
+    
 
 
 }
