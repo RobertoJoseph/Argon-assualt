@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(ScoreBoard))]
 public class EnemiesScript : MonoBehaviour
 {
     [SerializeField] GameObject deathFX;
